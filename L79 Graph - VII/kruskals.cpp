@@ -43,7 +43,7 @@ ll kruskals(vector<Edge> &input, int n, int e){
     int edgeCount = 0;  //n-1
     int i = 0;
     ll ans = 0;
-    while(edgeCount<n-1 and i<input.size()){
+    while(edgeCount<n-1 && i<input.size()){
         Edge curr = input[i];   //because input is sorted so we will get min wt edge
         int srcPar = find(parent, curr.src);
         int destPar = find(parent, curr.dest);
@@ -57,7 +57,6 @@ ll kruskals(vector<Edge> &input, int n, int e){
     }
     return ans;
 }
-
 
 int main() {
     int n, e;

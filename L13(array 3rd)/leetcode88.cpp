@@ -37,8 +37,6 @@ vector<int> merge(vector<int> &arr1 ,vector<int> &arr2 ){
         }
         return res;
 }
-
-
 int main(){
     vector<int> arr1;
     arr1.push_back(1);

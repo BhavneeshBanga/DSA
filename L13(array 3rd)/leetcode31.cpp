@@ -1,4 +1,5 @@
 //leetcode 31 Next permutaion
+// https://leetcode.com/problems/next-permutation/description/
 #include<iostream>
 #include<vector>
 #include<algorithm>
