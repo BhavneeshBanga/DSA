@@ -6,5 +6,5 @@ int StairCase(int n){
     return StairCase(n-1) + StairCase(n-2);
 }
 int main(){
-    cout<<StairCase(6)<<endl;
+    cout<<StairCase(5)<<endl;
 }

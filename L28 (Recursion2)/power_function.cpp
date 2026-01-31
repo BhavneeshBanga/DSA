@@ -2,13 +2,15 @@
 #include<iostream>
 using namespace std;
 int pow(int x,int n){
-    if(n==1){
-        return x;
+    if(n==1) return x;
+    if(n%2==0){
+        return pow(x, n/2)*pow(x, n/2);
     }
-    else if(n%)
-    int ans = pow(x, n/2);
-    return ans*ans;
+    else{
+        return pow(x, n/2)*pow(x, n/2)*x;
+    }
+    
 }
 int main(){
-    cout<<pow(2,8);
+    cout<<pow(2,7);
 }

@@ -12,10 +12,3 @@ void pip(int n){
 int main(){
     pip(3);
 }
-
-// Print zig Zag
-// #include<iostream>
-// using namespace std;
-// int main(){
-    
-// }

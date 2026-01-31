@@ -9,7 +9,7 @@ int maze(int sr,int sc,int er,int ec ){
     int totalWays = RightWays + LeftWays;
     return totalWays;
 }
-void printpath(int sr,int sc,int er,int ec, string s){
+void printpath(int sr,int sc,int er,int ec, string s) {
     if(sr>er || sc>ec) return;
     if(sr==er && sc==ec){
         cout<<s<<endl;
@@ -18,15 +18,15 @@ void printpath(int sr,int sc,int er,int ec, string s){
     printpath(sr,sc+1,er,ec, s+'R');
     printpath(sr+1,sc,er,ec, s+'D');
 }
-int maze2(int row, int col){
+
+int maze2(int row, int col) {
     if(row<1 ||col<1) return 0;
     if(row==1 && col==1) return 1;
     int RightWays = maze2(row, col-1);
     int LeftWays = maze2(row-1, col);
-    int totalWays = RightWays + LeftWays;
-    return totalWays;
+    return RightWays + LeftWays;
 }
-int main(){
+int main() {
     // cout<<maze(0, 0, 4, 5);
     // printpath(0, 0, 5, 5, "");
     cout<<maze2(3, 4);
