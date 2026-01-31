@@ -41,11 +41,5 @@ int main() {
     for(int l = 0 ; l <n-k+1 ; l++){
         cout<<ans[l]<<" ";
     }
-
-
-
-
-
-    
     return 0;
 }
