@@ -4,8 +4,7 @@
 #include<vector>
 #include<string>
 using namespace std;
-void printSubset(int arr[] , int n , int idx ,
-    vector<int> ans){
+void printSubset(int arr[] , int n , int idx , vector<int> ans){
     if(idx == n ){
         for(int i = 0 ; i< ans.size() ; i++){
             cout<<ans[i]<<" ";

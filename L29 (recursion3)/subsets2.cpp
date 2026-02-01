@@ -1,8 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-void storeSubset(string ans, string original, 
-vector<string> &v, bool flag){
+void storeSubset(string ans, string original, vector<string> &v, bool flag){
     if(original==""){
         v.push_back(ans);
         return;
