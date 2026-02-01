@@ -1,5 +1,4 @@
-// 
-print subset of string
+// print subset of string
 #include<iostream>
 using namespace std;
 void printSubset(string ans, string original){
