@@ -13,6 +13,7 @@ class Node{
             this->right = NULL;
         } 
 };
+
 int levels(Node* root){
     if(root==NULL) return 0;
     return 1+ max(levels(root->left),levels(root->right) );
@@ -28,13 +29,14 @@ void nthLevel(Node* root, int curr, int level){//yeh function kisi particular ro
     nthLevel(root->right, curr+1 , level);
 }
 
-void levelOrder(Node* root){
+void levelOrder(Node* root){    //using DFS
     int n = levels(root);
     for(int i = 1 ; i<= n ; i++){
         nthLevel(root, 1, i);
         cout<<endl;
     }
 }
+
 void LevelOrderQueue(Node* root){
     queue<Node*> q;
     q.push(root);
@@ -42,11 +44,12 @@ void LevelOrderQueue(Node* root){
         Node* temp = q.front();
         q.pop();
         cout<<temp->val<<" ";
-        if(temp->left != NULL) q.push(temp->left);
-        if(temp->right != NULL) q.push(temp->right);
+        if(temp->left) q.push(temp->left);
+        if(temp->right) q.push(temp->right);
     }
     cout<<endl;
 }
+
 void nthLevelRev(Node* root, int curr, int level){
     if(root==NULL) return;
     if(curr==level){
@@ -73,7 +76,7 @@ int main() {
     c->right = g;
     // LevelOrderQueue(a);
     // nthLevel(a, 0, 2);
-    levelOrder(a);
-    
+    // levelOrder(a);
+    nthLevelRev(a, 0, 2);
     return 0;
 }

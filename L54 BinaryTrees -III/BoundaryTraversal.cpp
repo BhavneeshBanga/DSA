@@ -56,21 +56,22 @@ return;
 }
 
 void leftBoundary(Node* root){
-    if(root==NULL){ return ;}
+    if(root==NULL){ return; }
     if(root->left==NULL && root->right==NULL) return ;
     cout<<root->val<<" ";
     leftBoundary(root->left);
     if(root->left==NULL) leftBoundary(root->right);   
 }
+
 void BottomBoundary(Node* root){
     if(root==NULL) return ;
     if(root->left==NULL && root->right==NULL) cout<<root->val<<" ";
-    
     BottomBoundary(root->left);
     BottomBoundary(root->right);   
 }
+
 void RightBoundary(Node* root){
-    if(root==NULL){ return ;}
+    if(root==NULL){ return; }
     if(root->left==NULL && root->right==NULL) return ;
     RightBoundary(root->right);
     if(root->right==NULL) RightBoundary(root->left);   
