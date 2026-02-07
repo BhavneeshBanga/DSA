@@ -64,13 +64,13 @@ int main() {
 
     displayTree(a);
 
-    // cout<<"\nThe sum of the tree is "<<Sum(a);
+    cout<<"\nThe sum of the tree is "<<Sum(a);
 
-    // cout<<"\nThe size of the tree is "<<size(a)<<endl;
+    cout<<"\nThe size of the tree is "<<size(a)<<endl;
 
-    // cout<<"\nThe maximun value of the tree is "<<maxInTree(a);
+    cout<<"\nThe maximun value of the tree is "<<maxInTree(a);
 
-    // cout<<"\nThe  no of levels in this tree is "<<noOfLevels(a)<<endl;
+    cout<<"\nThe  no of levels in this tree is "<<noOfLevels(a)<<endl;
     
     return 0;
 }
