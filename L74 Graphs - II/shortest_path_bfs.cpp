@@ -38,6 +38,7 @@ void bfs(int src, vector<int> &dist){        //T.C O(V + E)
             }
         }
     }
+    cout<<"\n";
 }
 
 int main() {

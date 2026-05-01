@@ -37,23 +37,22 @@ ll kruskals(vector<Edge> &input, int n, int e){
     sort(input.begin(), input.end(), cmp);
     vector<int> parent(n+1);
     vector<int> rank(n+1, 1);
-    for(int i = 0 ; i<=n ; i++){
+    for(size_t i = 0 ; i<=n ; i++){
         parent[i] = i;
     }
-    int edgeCount = 0;  //n-1
+    int edgeCount = 0;  //n-1  <- for tree
     int i = 0;
     ll ans = 0;
-    while(edgeCount<n-1 && i<input.size()){
-        Edge curr = input[i];   //because input is sorted so we will get min wt edge
+    while(edgeCount < n-1 && i < input.size()){
+        Edge curr = input[i];       //because input is sorted so we will get min wt edge
         int srcPar = find(parent, curr.src);
         int destPar = find(parent, curr.dest);
-        if(srcPar != destPar){
-            //include edge as this will not make cycle
+        if(srcPar != destPar){   //include edge as this will not make cycle
             Union(parent, rank, srcPar, destPar);
             ans += curr.wt;
             edgeCount++;
         }
-        i++;    //doesn't matter u picked thse last edge or not we will stillneed to go to next edge
+        i++;     //doesn't matter u picked thse last edge or not we will stillneed to go to next edge
     }
     return ans;
 }
@@ -66,7 +65,5 @@ int main() {
         cin>>v[i].src>>v[i].dest>>v[i].wt;
     }
     cout<<kruskals(v, n, e)<<endl;
-    int ab;
-    cin>>ab;
     return 0;
 }

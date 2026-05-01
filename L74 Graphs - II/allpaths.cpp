@@ -29,7 +29,6 @@ void dfs(int curr, int end, vector<int> &path){        //T.C. O(V + E)
 
     for(auto neighbour : graph[curr]){
         if(!visited.count(neighbour)){
-            cout<<neighbour<<endl;
             dfs(neighbour, end, path);
         }
     }
