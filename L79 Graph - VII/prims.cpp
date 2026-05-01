@@ -9,9 +9,11 @@
 
 #define ll long long int 
 #define pp pair<int, int>
+
 using namespace std;
 
 vector<list<pp> > gr;
+
 void add_edge(int u, int v, int wt, bool bidir = true){
     gr[u].push_back({v, wt});
     if(bidir){
@@ -49,10 +51,10 @@ ll prims(int src, int n){
                 mp[neighbour.first] = neighbour.second;
             }
         }
-
     }
     return result;
 }
+
 int main() {
     int n, m;
     cin>>n>>m;
