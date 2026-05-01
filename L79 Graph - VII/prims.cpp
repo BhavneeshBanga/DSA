@@ -22,18 +22,22 @@ void add_edge(int u, int v, int wt, bool bidir = true){
 }
 
 ll prims(int src, int n){
+
     priority_queue<pp, vector<pp>, greater<pp> > pq;    //{wt, node}
     unordered_set<int> visited;
     vector<int> par(n+1);
-    unordered_map<int, int> mp;
+    unordered_map<int, int> mp;    //{node, wt}
+    
+    int total_count = 0; // 0-->n-1
+    int result = 0;     //sum of weights
+    
     for(int i = 1 ; i<=n ;i++){
         mp[i] = INT_MAX;
     }
+    mp[src] = -1;    
+      
     pq.push({0, src});
 
-    mp[src] = -1;
-    int total_count = 0; // 0-->n-1
-    int result = 0;     //sum of weights
     while(total_count < n and !pq.empty()){
         pp curr = pq.top();
         if(visited.count(curr.second)){
