@@ -67,3 +67,8 @@ https://csacademy.com/app/graph_editor/
 3 8 3
 8 5 5
 3 5 5
+
+4 3
+2 1 1 
+2 3 1 
+3 4 1
