@@ -33,7 +33,7 @@ void topoBFS(){
         cout<<node<<" ";
         qu.pop();
         for(auto neighbour : graph[node]){
-            if(not vis.count(neighbour)) {
+            if(!vis.count(neighbour)) {
                 indegree[neighbour]--;
                 if(indegree[neighbour]==0){
                     qu.push(neighbour);
