@@ -14,7 +14,7 @@ using namespace std;
 
 vector<list<pp> > gr;
 
-void add_edge(int u, int v, int wt, bool bidir = true){
+void add_edge(int u, int v, int wt, bool bidir = true) {
     gr[u].push_back({v, wt});
     if(bidir){
         gr[v].push_back({u, wt});
@@ -31,16 +31,16 @@ ll prims(int src, int n){
     int total_count = 0; // 0-->n-1
     int result = 0;     //sum of weights
     
-    for(int i = 1 ; i<=n ;i++){
+    for(int i = 1 ; i<=n ;i++) {
         mp[i] = INT_MAX;
     }
     mp[src] = -1;    
       
     pq.push({0, src});
 
-    while(total_count < n and !pq.empty()){
+    while(total_count < n and !pq.empty()) {
         pp curr = pq.top();
-        if(visited.count(curr.second)){
+        if(visited.count(curr.second)) {
             pq.pop();
             continue;
         }
@@ -48,12 +48,12 @@ ll prims(int src, int n){
         total_count ++;
         result += curr.first;
         pq.pop();
-        for(auto neighbour : gr[curr.second]){
+        for(auto neighbour : gr[curr.second]) {
             if(!visited.count(neighbour.first) and mp[neighbour.first] > neighbour.second){
                 pq.push({neighbour.second, neighbour.first});
                 par[neighbour.first] = curr.second;
                 mp[neighbour.first] = neighbour.second;
-            }
+            } 
         }
     }
     return result;
@@ -62,7 +62,7 @@ ll prims(int src, int n){
 int main() {
     int n, m;
     cin>>n>>m;
-    gr.resize(n+1, list<pp >() );
+    gr.resize(n+1, list<pp >());
     while(m--){
         int u, v, wt;
         cin>>u>>v>>wt;
