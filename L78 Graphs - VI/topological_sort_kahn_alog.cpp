@@ -28,7 +28,7 @@ void topoBFS(){
             vis.insert(i);
         }
     }
-    while(!qu.empty()){
+    while(!qu.empty()) {
         int node = qu.front();
         cout<<node<<" ";
         qu.pop();

@@ -1,2 +1,8 @@
 *.exe
 .env
+
+
+git add .
+git commit -m "Added Code"
+git push
+

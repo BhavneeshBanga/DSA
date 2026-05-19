@@ -32,15 +32,15 @@ unordered_map<int, int> dijkstra(int src, int n){    // O ( VlogV + ElogV)
     mp[src] = 0;    
     pq.push({0, src});
 
-    while(!pq.empty()){     // O ((V+E)logV)
+    while(!pq.empty()) {     // O ((V+E)logV)
         pp curr = pq.top();
-        if(visited.count(curr.second)){
+        if(visited.count(curr.second)) {
             pq.pop();
             continue;
         }
         visited.insert(curr.second);
         pq.pop();
-        for(auto neighbour : gr[curr.second]){
+        for(auto neighbour : gr[curr.second]) {
             if(!visited.count(neighbour.first) and mp[neighbour.first] > mp[curr.second] + neighbour.second ){
                 pq.push({mp[curr.second] + neighbour.second , neighbour.first});
                 via[neighbour.first] = curr.second;
@@ -49,6 +49,16 @@ unordered_map<int, int> dijkstra(int src, int n){    // O ( VlogV + ElogV)
         }
     }
     return mp;
+}
+
+void display(){
+    for(int i = 0 ; i<gr.size() ; i++) {
+        cout<<i<<" -> ";
+        for (auto ele : gr[i]){
+            cout<<"(" <<ele.first<<" "<<ele.second<<")"<<" , ";
+        }
+        cout<<endl;
+    }
 }
 
 int main() {
@@ -62,6 +72,9 @@ int main() {
     }
     cout<<"Done input"<<"\n";
     int src, dest;
+
+    display();
+    
     cout<<"Enter sourrce>>";
     cin>>src;
     unordered_map<int, int> sp = dijkstra(src, n);
