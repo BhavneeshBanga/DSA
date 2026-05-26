@@ -5,8 +5,10 @@ public:
     queue<pair<int, int>> helper(int r, int c, vector<vector<int>>&grid, queue<pp>&q) {
         int rows = grid.size();
         int cols = grid.size();
+
         int dr[] = {-1, 1, 0, 0};
         int dc[] = { 0, 0, -1, 1};
+        
         q.push({0, {r, c}});
         queue<pair<int,int>> qu;
         qu.push({r, c});
