@@ -1,5 +1,61 @@
 // https://leetcode.com/contest/biweekly-contest-185/problems/minimum-lights-to-illuminate-a-road/
 //to find continuous 0s lengths
+
+Pattern 1: Range Coverage → Difference Array
+Question padhte hi tum dekhte ho:
+
+Bulb at i covers [i-v, i+v]
+
+Matlab har bulb ek range cover kar raha hai.
+
+Agar tumhara first thought ye tha:
+
+
+Examples:
+
+Street illumination
+Flight bookings
+Range increment
+Car pooling
+Corporate flight bookings (LeetCode famous question)
+
+
+
+
+Pattern 2: Continuous Uncovered Segment
+
+Visible array ban gayi:
+
+1 1 1 0 0 0 0 1 1 0
+
+Ab question kya pooch raha hai?
+
+Minimum extra bulbs
+
+Extra bulb ki range fixed hai:
+
+[j-1, j, j+1]
+
+Matlab:
+
+1 bulb → max 3 positions
+
+Ab uncovered segment dekho:
+
+0 0 0 0
+
+Length = 4
+
+Question secretly ban gaya:
+
+Length 4 ko
+3-size pieces se cover karo
+
+Ye coverage problem hai.
+
+
+
+
 //Without TLE
 class Solution {
 public:
