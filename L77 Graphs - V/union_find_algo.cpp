@@ -9,18 +9,18 @@ int find(vector<int> &parent, int x){
     return parent[x] = (parent[x] == x) ? x : find(parent, parent[x]);
 }
 
-void Union(vector<int> &parent, vector<int> &rank, int a, int b){
-    a = find(parent, a);
-    b = find(parent, b);
-    if(rank[a] >= rank[b]){
-        rank[a]++;
-        parent[b] = a;
+void Union(vector<int>&parent, vector<int>&rank, int a, int b) {
+        if(rank[a] > rank[b]) {
+            par[b] = a;
+        } 
+        else if(rank[b] > rank[a] ) {
+            par[a] = b;
+        } 
+        else{
+            rank[a]++;
+            par[b] = a;
+        }
     }
-    else{
-        rank[b]++;
-        parent[a] = b;
-    }
-}
 
 
 int main() {
