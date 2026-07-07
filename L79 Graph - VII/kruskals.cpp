@@ -3,6 +3,7 @@
 #include <climits>
 #include <algorithm>
 #define ll long long int
+
 using namespace std;
 
 int find(vector<int> &parent, int a){
