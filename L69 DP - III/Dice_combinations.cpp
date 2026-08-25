@@ -5,6 +5,7 @@
 using namespace std;
 
 vector<ll> dp(1000005 , -1);
+
 ll f(int n){
     if(dp[n] != -1) return dp[n];;
     if(n==0) return 1;

@@ -7,24 +7,22 @@ using namespace std;
 int main() {
     int n;
     cin>>n;
+    
+    vector<int>f(n+10, 0);
+    
     int m;
     cin>>m;
 
-    vector<int>f(n+1, 0);
-    vector<int>l(n+1, 0);
-    vector<int>r(n+1, 0);
-
-    for(int i = 0 ; i<m ; i++) {
+    for(int i = 0 ; i<m ; i++){
         int L;
         int R;
         cin>>L>>R;
-        l[L]++;
-        r[R]++;
+        f[L]++;
+        f[R+1]--;
     }
 
-    f[1] = l[1];
-    for(int i = 2 ; i<=n ; i++) {
-        f[i] = l[i] - r[i-1] + f[i-1];
+    for(int i = 1 ; i<f.size() ; i++) {
+        f[i] = f[i] + f[i-1];
     }
 
     vector<int>v(10000007, 0);
@@ -46,15 +44,3 @@ int main() {
         cout<<v[num]<<endl;
     }
 }
-
-
-
-kon kon si queries se kon kon se box effect ho rahe hian
-
-how many queries will effect box1
-jo box 1 se start ho raha hai aur box1 par ya ussae bade kisi bhi index par ho vo box1 ko effect karege
-
-
-l[] = no. of query with left on i
-r[] = no. of query with right on i
-

@@ -1,3 +1,5 @@
+//CSES PROBLEM
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -34,7 +36,9 @@ int f(int n, vector<int> &dp){
 vector<int> dp(100000005, -1);
 int fbu(int num){
     dp[0] = 0;
-    for(int i = 1 ;i<= 9; i++) dp[i] = 1;
+    for(int i = 1 ;i<= 9; i++)
+        dp[i] = 1;
+        
     for(int n = 10; n<= num ;n++){
         // n -> states
         // calc dp[n]
